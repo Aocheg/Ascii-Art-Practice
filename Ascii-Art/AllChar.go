@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"strings"
 )
 
-func AsciiAllChar(text string) string {
+func AsciiAllChar(text string, banner string) string {
 	data, _ := os.ReadFile("standard.txt")
 	words := string(data)
 
@@ -24,12 +23,13 @@ func AsciiAllChar(text string) string {
 			result += "\n"
 
 		}
-		fmt.Println("\n")
+		// fmt.Println("\n")
 	}
 
 	return result
 
 }
-func main() {
-	fmt.Println(AsciiAllChar("1Hello 2There"))
-}
+
+// func main() {
+// 	fmt.Println(AsciiAllChar("1Hello 2There"))
+// }
