@@ -6,7 +6,14 @@ import (
 )
 
 func AsciiAllChar(text string, banner string) string {
-	data, _ := os.ReadFile("standard.txt")
+
+	if text == "" {
+		return ""
+	}
+	if text == "\n" {
+		return "\n"
+	}
+	data, _ := os.ReadFile(banner + ".txt")
 	words := string(data)
 
 	SplitedWords := strings.Split(words, "\n")
@@ -15,10 +22,19 @@ func AsciiAllChar(text string, banner string) string {
 	var result string
 
 	for _, value := range splittext {
+		if value == "" {
+			if value == "" {
+				result += "\n"
+			}
+			continue
+
+		}
+
 		for row := 0; row < 8; row++ {
 			for _, char := range value {
 				start := (int(char) - 32) * 9
-				result += (SplitedWords[start+row])
+				result += SplitedWords[start+row]
+
 			}
 			result += "\n"
 
