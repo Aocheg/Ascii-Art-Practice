@@ -21,6 +21,7 @@ func main() {
 		return
 	}
 
+	//banner validation
 	if banner != "standard" && banner != "shadow" && banner != "thinkertoy" {
 		fmt.Println("invalid banner:", banner, "\n", "Use: standard, shadow, or thinkertoy")
 		return

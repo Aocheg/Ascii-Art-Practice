@@ -1,6 +1,8 @@
 package main
 
-import "strings"
+import (
+	"strings"
+)
 
 func BuildMap(content string) map[rune][]string {
 	lines := strings.Split(content, "\n")
